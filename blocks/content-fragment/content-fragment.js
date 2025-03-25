@@ -1,46 +1,44 @@
-function getMetadata(name) {
-    const attr = name && name.includes(':') ? 'property' : 'name';
-    const meta = [...document.querySelectorAll(`meta[${attr}="${name}"]`)]
-      .map((m) => m.content)
-      .join(', ');
-    return meta || '';
+import { html, render } from '../../scripts/preact.js';
+
+/**
+ * 
+ * {
+ * claimId: "BREZETH01",
+ * claimOwner: "Chao",
+ * claimName: "Ethos",
+ * claimDescription: {
+ * plaintext: "In Study 2 (24 weeks), BREZTRI demonstrated a significant improvement in FEV1 AUC0-4 vs ICS/LABA (116 mL; P<0.0001) and an improvement in change from baseline in morning pre-dose trough FEV1 vs LAMA/LABA (13 mL; P=0.2375) at Week 24.1,2"
+ * },
+ * study: "Study 2",
+ * medicine: [
+ * "medicines:breztri"
+ * ],
+ * reviewDate: "2024-08-31T08:00:00.000Z"
+ * }
+ */
+function Fragment(props) {
+  const { fragment } = props;
+  return html`<div class="fragment">
+        <div class="short-desc" dangerouslySetInnerHTML=${{
+          __html: fragment.shortdesc?.html || ''
+        }}></div>
+        <div class="topic-data" dangerouslySetInnerHTML=${{
+          __html: fragment.topicData?.html || ''
+        }}></div>
+    </div>`;
+}
+
+/**
+ * loads and decorates the header, mainly the nav
+ * @param {Element} block The header block element
+ */
+export default async function decorate(block) {
+  const url = block.innerText?.trim();
+  if (url) {
+    const fragment = await fetch(url).then(res => res.json()).then(data => data.data.cfFromAemGuidesByPath.item);
+    block.innerText = '';
+    render(html`<${Fragment} fragment=${fragment} />`, block);
+  } else {
+    block.remove();
   }
-  
-  //const aem = "http://localhost:4503";
-  //const aem = "https://publish-p107058-e1001010.adobeaemcloud.com";
-  //const aem = "https://publish-p135360-e1341441.adobeaemcloud.com/";
-const aem = "https://publish-p150634-e1553296.adobeaemcloud.com";
-  
-  export default function decorate(block) {
-  
-    const slugID = document.createElement('div');
-    slugID.id = 'slug';
-    slugID.textContent = block.querySelector('div:nth-child(1)').textContent.trim();
-    block.querySelector('div:nth-child(1)').replaceWith(slugID);
-  
-    const destinationDiv = document.createElement('div');
-    destinationDiv.id = `destination-${slugID.textContent}`;
-    block.querySelector('div:last-of-type').replaceWith(destinationDiv);
-  
-    fetch(`${aem}/graphql/execute.json/nationwide/offer-by-slug;slug=${slugID.textContent}`)
-      .then(response => response.json())
-      .then(response => {
-        const { bannerImage } = response.data.travelDestinationList.items[0];
-        const imageURL = `${aem}${primaryImage._dynamicUrl}`;
-  
-        destinationDiv.innerHTML = `
-          <div class='destination-image'>
-            <img src="${imageURL}" alt="offer"}">
-          </div>
-          <div class='destination-content'>
-            <div class='destination-content-title'><h3>Test</h3></div>
-            <div class='destination-content-subtitle'><h4>Test</h4></div>
-            <div class='destination-content-description'><p>test</p></div>
-          </div>
-        `;
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  
-  }
+}
