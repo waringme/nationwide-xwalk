@@ -161,9 +161,9 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "fragment",
+        "name": "Content-Fragment",
         "label": "Reference",
-        "value": "yo"
+        "value": ""
       }
     ]
   },

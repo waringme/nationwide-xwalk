@@ -23,7 +23,7 @@
             {
                 "component": "text",
                 "valueType": "string",
-                "name": "ContentFragment",
+                "name": "Content-Fragment",
                 "label": "Reference",
                 "value": ""
               }
