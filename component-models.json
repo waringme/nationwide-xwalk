@@ -161,8 +161,8 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "cfragment",
-        "label": "Alt",
+        "name": "ContentFragment",
+        "label": "Reference",
         "value": ""
       }
     ]
