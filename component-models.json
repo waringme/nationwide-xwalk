@@ -176,7 +176,7 @@
         "valueType": "string",
         "variationName": "contentFragmentVariation",
         "validation": {
-            "rootPath": "/content/dam/nationwide/content-framgents/campaigns/perfect-match?appId=aem-cf-admin"
+            "rootPath": "/content/dam/nationwide/content-framgents/campaigns/perfect-match"
         }
       }
     ]
