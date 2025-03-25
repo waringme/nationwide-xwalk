@@ -45,24 +45,20 @@
 
         {
           "title": "Content Fragment",
-          "id": "aem-content-fragment",
+          "id": "content-fragment",
           "plugins": {
             "xwalk": {
-              "cf": {
-                "cfModel": "/content/editor.html/conf/nationwide/settings/dam/cfm/models/your-perfect-mortgage-match",
-                "cfFolder": "/content/dam/nationwide/content-framgents/campaigns/perfect-match?appId=aem-cf-admin",
-                "title": "New Offer",
-                "description": "test description",
-                "template": {}
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Content Fragment",
+                  "model": "content-fragment"
+                }
               }
             }
           }
         },
-
         
-     
-        
-
         {
           "title": "Button",
           "id": "button",

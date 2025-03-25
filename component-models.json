@@ -167,17 +167,14 @@
   },
 
   {
-    "id": "aem-content-fragment",
+    "id": "content-fragment",
     "fields": [
       {
-        "component": "aem-content-fragment",
-        "name": "picker",
-        "label": "Content Fragment Picker",
-        "valueType": "string",
-        "variationName": "contentFragmentVariation",
-        "validation": {
-            "rootPath": "/content/dam/nationwide/content-framgents/campaigns/perfect-match"
-        }
+        "component": "text-input",
+        "name": "text",
+        "value": "",
+        "label": "Slug",
+        "valueType": "string"
       }
     ]
   },
