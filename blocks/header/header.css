@@ -1,6 +1,6 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: var(--background-header);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -19,6 +19,7 @@ header nav {
   height: var(--nav-height);
   padding: 0 24px;
   font-family: var(--body-font-family);
+  color:white;
 }
 
 header nav[aria-expanded='true'] {
