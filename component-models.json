@@ -156,6 +156,18 @@
     ]
   },
   {
+    "id": "content-fragment",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cfragment",
+        "label": "Alt",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
