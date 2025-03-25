@@ -19,12 +19,8 @@ import { html, render } from '../../scripts/preact.js';
 function Fragment(props) {
   const { fragment } = props;
   return html`<div class="fragment">
-        <div class="short-desc" dangerouslySetInnerHTML=${{
-          __html: fragment.shortdesc?.html || ''
-        }}></div>
-        <div class="topic-data" dangerouslySetInnerHTML=${{
-          __html: fragment.topicData?.html || ''
-        }}></div>
+        <p> ${fragment.cta}</p>
+        <img src="${fragment.bannerAd._publishUrl}" alt="${fragment.cta}" />
     </div>`;
 }
 
@@ -35,7 +31,7 @@ function Fragment(props) {
 export default async function decorate(block) {
   const url = block.innerText?.trim();
   if (url) {
-    const fragment = await fetch(url).then(res => res.json()).then(data => data.data.cfFromAemGuidesByPath.item);
+    const fragment = await fetch(url).then(res => res.json()).then(data => data.data.yourPerfectMortgageMatchById.item);
     block.innerText = '';
     render(html`<${Fragment} fragment=${fragment} />`, block);
   } else {
