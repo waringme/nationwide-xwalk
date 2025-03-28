@@ -15,7 +15,7 @@ import { html, render } from '../../scripts/preact.js';
  * ],
  * reviewDate: "2024-08-31T08:00:00.000Z"
  * }
- */
+ */   
 function Fragment(props) {
   const { fragment } = props;
   return html`<div class="fragment">
@@ -24,7 +24,7 @@ function Fragment(props) {
     </div>`;
 }
 
-/**
+/**   dddd
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
