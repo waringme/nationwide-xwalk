@@ -21,7 +21,7 @@ export default function decorate(block) {
   destinationDiv.id = `destination-${slugID.textContent}`;
   block.querySelector('div:last-of-type').replaceWith(destinationDiv);
 
-  fetch(`${aem}/graphql/execute.json/qatar-airways/destination-by-slug;slug=${slugID.textContent}`)
+  fetch(`${aem}/graphql/execute.json/nationwide/mortgage-offer-by-slug;slug=${slugID.textContent}`)
     .then(response => response.json())
     .then(response => {
       const { cta } = response.data.travelDestinationList.items[0];
