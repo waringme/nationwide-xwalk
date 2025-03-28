@@ -159,11 +159,11 @@
     "id": "content-fragment",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "Content-Fragment",
-        "label": "Reference",
-        "value": ""
+        "component": "text-input",
+        "name": "text",
+        "value": "",
+        "label": "Slug",
+        "valueType": "string"
       }
     ]
   },
