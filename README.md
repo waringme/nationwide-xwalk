@@ -16,7 +16,7 @@ Before using the aem-boilerplate, we recommand you to go through the documentati
 Furthremore, we encourage you to watch the recordings of any of our previous presentations or sessions:
 - [Getting started with AEM Authoring and Edge Delivery Services](https://experienceleague.adobe.com/en/docs/events/experience-manager-gems-recordings/gems2024/aem-authoring-and-edge-delivery)
 
-## Prerequisites
+## Prerequisitesddd
 
 - nodejs 18.3.x or newer
 - AEM Cloud Service release 2024.8 or newer (>= `17465`)
