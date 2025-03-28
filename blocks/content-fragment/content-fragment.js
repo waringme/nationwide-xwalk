@@ -37,8 +37,8 @@ console.log(cta);
         </div>
         <div class='destination-content'>
           <div class='destination-content-title'><h3>${cta}</h3></div>
-          <div class='destination-content-subtitle'><h4>${cta}</h4></div>
-          <div class='destination-content-description'><p>${cta.plaintext}</p></div>
+          <div class='destination-content-subtitle'><h4>${slugID.textContent}</h4></div>
+
         </div>
       `;
     })
