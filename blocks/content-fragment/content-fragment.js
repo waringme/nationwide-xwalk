@@ -22,7 +22,8 @@ export default function decorate(block) {
   destinationDiv.id = `destination-${slugID.textContent}`;
   block.querySelector('div:last-of-type').replaceWith(destinationDiv);
 
-  fetch(`${cors}${aem}/graphql/execute.json/nationwide/mortgage-offer-by-slug;slug=${slugID.textContent}`)
+  fetch('https://cors.cpilsworth.workers.dev/?target=https://publish-p150634-e1553296.adobeaemcloud.com//graphql/execute.json/nationwide/mortgage-offer-by-slug;slug=offer-1')
+//  fetch(`${cors}${aem}/graphql/execute.json/nationwide/mortgage-offer-by-slug;slug=${slugID.textContent}`)
     .then(response => response.json())
     .then(response => {
       const { cta } = response.data.travelDestinationList.items[0];
