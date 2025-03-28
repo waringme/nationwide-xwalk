@@ -9,7 +9,7 @@ function getMetadata(name) {
 //const aem = "http://localhost:4503";
 //const aem = "https://publish-p107058-e1001010.adobeaemcloud.com";
 const aem = "https://publish-p150634-e1553296.adobeaemcloud.com/";
-//const cors = "https://cors.cpilsworth.workers.dev/?target=";
+const cors = "https://cors.cpilsworth.workers.dev/?target=";
 
 export default function decorate(block) {
 
@@ -22,8 +22,8 @@ export default function decorate(block) {
   destinationDiv.id = `destination-${slugID.textContent}`;
   block.querySelector('div:last-of-type').replaceWith(destinationDiv);
 
-  fetch('https://cors.cpilsworth.workers.dev/?target=https://publish-p150634-e1553296.adobeaemcloud.com/graphql/execute.json/nationwide/mortgage-offer-by-slug;slug=offer-1')
-//  fetch(`${cors}${aem}/graphql/execute.json/nationwide/mortgage-offer-by-slug;slug=${slugID.textContent}`)
+ // fetch('https://cors.cpilsworth.workers.dev/?target=https://publish-p150634-e1553296.adobeaemcloud.com/graphql/execute.json/nationwide/mortgage-offer-by-slug;slug=offer-1')
+ fetch(`${cors}${aem}/graphql/execute.json/nationwide/mortgage-offer-by-slug;slug=${slugID.textContent}`)
     .then(response => response.json())
     .then(response => {
       const { cta, bannerAd } = response.data.yourPerfectMortgageMatchList.items[0];
