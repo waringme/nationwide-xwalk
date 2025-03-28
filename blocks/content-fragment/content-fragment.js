@@ -26,7 +26,7 @@ export default function decorate(block) {
  fetch(`${cors}${aem}/graphql/execute.json/nationwide/mortgage-offer-by-slug;slug=${slugID.textContent}`)
     .then(response => response.json())
     .then(response => {
-      const {  bannerAd, cta } = response.data.yourPerfectMortgageMatchList.items[0];
+      const { cta } = response.data.yourPerfectMortgageMatchList.items[0];
       const imageURL = `${aem}${bannerAd._dynamicUrl}`;
 console.log("CTA");
 console.log(cta);
