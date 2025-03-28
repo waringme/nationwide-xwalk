@@ -15,7 +15,7 @@
   margin-right: auto;
   color: var(--background-color);   
 }
-
+   
 .hero picture {
   position: absolute;
   z-index: -1;
