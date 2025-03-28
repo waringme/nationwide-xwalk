@@ -26,7 +26,7 @@ export default function decorate(block) {
     .then(response => {
       const { cta } = response.data.travelDestinationList.items[0];
       const imageURL = `${aem}${bannerAd._dynamicUrl}`;
-console.log("CTA")
+console.log("CTA");
 console.log(cta);
 
       destinationDiv.innerHTML = `
